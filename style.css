@@ -1,0 +1,71 @@
+.wappper{
+    height: 100vh;
+    overflow-x: hidden;/*flow rokna*/
+    overflow-y: auto;/*flow chalu*/
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*box size remain same*/
+}
+.container{
+    height: 100vh;
+    max-width: 1200px;/*widht di apn nai*/
+    margin:0 auto;/*left or right ka margin equal karne ka centre mai hai*/
+    padding: 20px;
+}
+.container h1{
+    margin: 20px 0;/* pehle top or bottom ka and second r and l ka*/
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+.gallery{
+    display: flex;/*flex isliye bananya thaki spacing asani sai hojai*/
+    flex-wrap: wrap;/*sabko proper rakh dega*/
+    justify-content: space-between;
+}
+.card{
+    width: 32%;/*100/3 teen photo rakhni hai ek line mai*/
+    position: relative;/*relative kari kyuki text ko overlap karna hai absolute sai */
+    margin-bottom: 20px;
+    border-radius: 10px;/* round border*/
+    overflow: hidden;
+}
+.card img{
+    height: 100% ;
+    width: 100%;/* size of img acc to card*/
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px black;
+    object-fit: cover;/* not compusory*/
+
+}
+.card:hover{
+    transform: scale(1.03);
+    filter: drop-shadow( 0 0 10px #333);/* shadow karne kai liye*/
+    transition:0.3s ;/* smooth transition karne kai liye */
+}
+.card:hover img{
+    filter: grayscale(0%);/* color vaois lana kai liye*/
+}
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10%;
+    width: 100%;
+    height: 5%;
+    font-size: 10px;
+    font-weight: 50;
+    color: #fff;
+    opacity: 0;/*taki text abhi nai dikhe hover pai dikhe*/
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+
+}
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+
+}
